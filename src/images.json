@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "url": "https://i.imgur.com/2sbh27j.jpg",
+        "clicked": false,
+        "alt": "Retro Candy"
+    },
+    {
+        "id": 2,
+        "url": "https://i.imgur.com/mGArveQ.jpg",
+        "clicked": false,
+        "alt": "Tropical Candy"
+    },
+    {
+        "id": 3,
+        "url": "https://i.imgur.com/grdGvRN.jpg",
+        "clicked": false,
+        "alt": "Healthy Candy"
+    },
+    {
+        "id": 4,
+        "url": "https://i.imgur.com/2KrTVPu.jpg",
+        "clicked": false,
+        "alt": "Lollipop Candy"
+    },
+    {
+        "id": 5,
+        "url": "https://i.imgur.com/sJIvWJr.png",
+        "clicked": false,
+        "alt": "Nerds Candy"
+    },
+    {
+        "id": 6,
+        "url": "https://i.imgur.com/NsuSAWZ.jpg",
+        "clicked": false,
+        "alt": "M&M Candy"
+    },
+    {
+        "id": 7,
+        "url": "https://i.imgur.com/TYASz0d.png",
+        "clicked": false,
+        "alt": "Fruit Candy"
+    },
+    {
+        "id": 8,
+        "url": "https://i.imgur.com/jjrSia1.jpg",
+        "clicked": false,
+        "alt": "Sour Candy"
+    },
+    {
+        "id": 9,
+        "url": "https://i.imgur.com/G5BWfD8.jpg",
+        "clicked": false,
+        "alt": "Fancy Chocolate Candy"
+    },
+    {
+        "id": 10,
+        "url": "https://i.imgur.com/eYUjwRo.jpg",
+        "clicked": false,
+        "alt": "Windmill Candy"
+    },
+    {
+        "id": 11,
+        "url": "https://i.imgur.com/ZDLdHKO.jpg",
+        "clicked": false,
+        "alt": "Choclate and Cookie Candy"
+    },
+    {
+        "id": 12,
+        "url": "https://i.imgur.com/nvF3MIK.jpg",
+        "clicked": false,
+        "alt": "Atomic Candy"
+    }
+]
