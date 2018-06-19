@@ -12,50 +12,45 @@ class App extends Component {
     statusGuess: ""
   }
   imageOnClick = (id) => {
-    //Find image in this.state.images
-    const imageArray = this.state.images;
-    let stateCurrentScore = this.state.currentScore;
-    let stateHighestScore = this.state.highestScore;
-    const image = imageArray.find(image => image.id === id);
-    if(!image.clicked) {
-      //Set clicked attribute to true
-      image.clicked = true;
-      for(let i = 0; i < imageArray.length; i++) {
-        if(imageArray[i].id === id) {
-          imageArray[i] = image;
-        }
-      }
-      stateCurrentScore = stateCurrentScore + 1;
-      if(stateCurrentScore > stateHighestScore) {
-        stateHighestScore = stateCurrentScore;
-      }
+    let tempImagesArr = this.state.images;
+    const imageClicked = tempImagesArr[tempImagesArr.findIndex(image => id === image.id)];
+    let tempCurrentScore = this.state.currentScore;
+    let tempHighestScore = this.state.highestScore;
+    let tempStatusGuess = this.state.statusGuess;
+    //if the image has been clicked already reset current score and reset image clicked on all images
+    if(imageClicked.clicked) {
+      tempCurrentScore = 0;
+      tempStatusGuess = "You guessed incorrectly :(";
+      tempImagesArr.forEach(image => {
+        image.clicked = false;
+      })
     } else {
-      stateCurrentScore = 0
-      //start the round over and set click attribute to false
-      for(let i = 0; i < imageArray.length; i++) {
-        if(imageArray[i].id === id) {
-          imageArray[i] = image;
-        }
-        imageArray[i].clicked = false;
+      tempStatusGuess = "You guessed correctly :)";
+      tempCurrentScore++;
+      if(tempCurrentScore > tempHighestScore) {
+        tempHighestScore = tempCurrentScore;
       }
+      tempImagesArr.forEach(image => {
+        if(id === image.id) {
+          image.clicked = true;
+        }
+      })
     }
-    //Shuffle the Array and reset the state.
-    const shuffled = this.shuffleImages(imageArray);
-    this.setState({
-      currentScore: stateCurrentScore,
-      highestScore: stateHighestScore,
-      images: shuffled
-    })
-  }
-  shuffleImages = (array) => {
-    let m = array.length;
+    //Shuffle the images.
+    let m = tempImagesArr.length;
     while(m) {
       let i = Math.floor(Math.random() * m--);
-      let t = array[m];
-      array[m] = array[i];
-      array[i] = t;
+      let t = tempImagesArr[m];
+      tempImagesArr[m] = tempImagesArr[i];
+      tempImagesArr[i] = t;
     }
-    return array;
+    this.setState({
+      currentScore: tempCurrentScore,
+      highestScore: tempHighestScore,
+      images: tempImagesArr,
+      statusGuess: tempStatusGuess
+    })
+    console.log(this.state)
   }
   render() {
     return (
