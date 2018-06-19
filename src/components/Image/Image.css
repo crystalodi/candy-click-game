@@ -1,0 +1,8 @@
+.imagegame:hover {
+    cursor: pointer;
+}
+.imagegame {
+    max-width:170px;
+    max-height:170px;
+    margin:5px;
+}

@@ -3,7 +3,7 @@ import images from "./images.json";
 import Image from "./components/Image";
 import Container from "./components/Container";
 import Row from "./components/Row";
-
+import Title from "./components/Title";
 class App extends Component {
   state = {
     currentScore: 0,
@@ -26,7 +26,7 @@ class App extends Component {
       })
     } else {
       tempStatusGuess = "You guessed correctly :)";
-      tempCurrentScore++;
+      tempCurrentScore = tempCurrentScore + 1;
       if(tempCurrentScore > tempHighestScore) {
         tempHighestScore = tempCurrentScore;
       }
@@ -49,12 +49,14 @@ class App extends Component {
       highestScore: tempHighestScore,
       images: tempImagesArr,
       statusGuess: tempStatusGuess
-    })
-    console.log(this.state)
+    }, ()=> console.log(this.state))
   }
   render() {
     return (
       <Container>
+        <Row>
+          <Title title="Candy Click Game"/>
+        </Row>
         <Row>
           {this.state.images.map(image => (
             <Image
