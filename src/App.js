@@ -4,6 +4,8 @@ import Image from "./components/Image";
 import Container from "./components/Container";
 import Row from "./components/Row";
 import Title from "./components/Title";
+import HelperText from "./components/HelperText";
+import Stats from "./components/Stats";
 class App extends Component {
   state = {
     currentScore: 0,
@@ -56,6 +58,12 @@ class App extends Component {
       <Container>
         <Row>
           <Title title="Candy Click Game"/>
+        </Row>
+        <Row>
+          <HelperText helper="press any image to start"/>
+        </Row>
+        <Row>
+          <Stats currentScore={this.state.currentScore} highestScore={this.state.highestScore} statusGuess={this.state.statusGuess}/>
         </Row>
         <Row>
           {this.state.images.map(image => (
