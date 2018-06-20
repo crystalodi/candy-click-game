@@ -73,6 +73,7 @@ class App extends Component {
               imageOnClick={this.imageOnClick}
               alt={image.imagealt}
               clicked={image.clicked}
+              key={image.id}
             />
           ))}
         </Row>
